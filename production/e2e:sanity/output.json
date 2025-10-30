@@ -12,13 +12,13 @@
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "start": "2025-10-30T16:03:07.884Z",
-    "end": "2025-10-30T16:03:11.735Z",
-    "duration": 3851
+    "start": "2025-10-30T17:40:57.347Z",
+    "end": "2025-10-30T17:41:01.195Z",
+    "duration": 3848
   },
   "results": [
     {
-      "uuid": "e860d291-c171-4e14-820a-8ae82835afc7",
+      "uuid": "5337a2fe-d699-4173-b9aa-c0e0e372710f",
       "title": "",
       "fullFile": "cypress/e2e/sanity/sanity.cy.js",
       "file": "cypress/e2e/sanity/sanity.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a691da49-e0bb-413a-9a53-8bcc21b8f751",
+          "uuid": "1f4a5e52-6409-41d0-a3c5-17bf97043539",
           "title": "Login en SauceDemo usando .env",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Debería iniciar sesión correctamente con credenciales válidas",
               "fullTitle": "Login en SauceDemo usando .env Debería iniciar sesión correctamente con credenciales válidas",
               "timedOut": null,
-              "duration": 1370,
+              "duration": 1342,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.get('#user-name').type(_constants.default.CYPRESS_USER_EMAIL);\ncy.get('#password').type(_constants.default.CYPRESS_USER_PASSWORD);\ncy.get('#login-button').click();\ncy.get('[class=\"footer_copy\"]').invoke('text').then(text => {\n  const match = text.match(/\\d{4}/); // busca un año (4 dígitos seguidos)\n  const year = match ? match[0] : 'desconocido';\n  cy.writeFile('version.txt', year);\n  cy.log(`Guardando la versión ${year}`);\n});\n// Verifica que llega al inventario\ncy.url().should('include', '/inventory.html');\ncy.get('.product_label').should('contain', 'Products');",
               "err": {},
-              "uuid": "9f7e1206-dc65-439a-9b35-d514979ad82b",
-              "parentUUID": "a691da49-e0bb-413a-9a53-8bcc21b8f751",
+              "uuid": "feba7a30-08c6-4a50-8bd7-71e4b1a3e6a0",
+              "parentUUID": "1f4a5e52-6409-41d0-a3c5-17bf97043539",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Debería mostrar un error con credenciales inválidas",
               "fullTitle": "Login en SauceDemo usando .env Debería mostrar un error con credenciales inválidas",
               "timedOut": null,
-              "duration": 781,
+              "duration": 774,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "cy.get('#user-name').type('usuario_incorrecto');\ncy.get('#password').type('clave_incorrecta');\ncy.get('#login-button').click();\n// Verifica el mensaje de error\ncy.get('[data-test=\"error\"]').should('be.visible').and('contain', 'Username and password do not match any user');",
               "err": {},
-              "uuid": "4e55c58a-eeaa-48ce-bb42-f1b50369be53",
-              "parentUUID": "a691da49-e0bb-413a-9a53-8bcc21b8f751",
+              "uuid": "9be688b0-f2b0-49ac-863c-188862af6909",
+              "parentUUID": "1f4a5e52-6409-41d0-a3c5-17bf97043539",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "9f7e1206-dc65-439a-9b35-d514979ad82b",
-            "4e55c58a-eeaa-48ce-bb42-f1b50369be53"
+            "feba7a30-08c6-4a50-8bd7-71e4b1a3e6a0",
+            "9be688b0-f2b0-49ac-863c-188862af6909"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2151,
+          "duration": 2116,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
