@@ -1,0 +1,128 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-30T17:32:49.060Z",
+    "end": "2025-10-30T17:32:52.516Z",
+    "duration": 3456,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "909af013-74ac-461b-bf5f-53beb87dd421",
+      "title": "",
+      "fullFile": "cypress/e2e/smoke/smoke_test.cy.js",
+      "file": "cypress/e2e/smoke/smoke_test.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dddcee99-025e-4f5a-b757-82d3bdc45897",
+          "title": "Login en SauceDemo usando .env",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debería iniciar sesión correctamente con credenciales válidas",
+              "fullTitle": "Login en SauceDemo usando .env Debería iniciar sesión correctamente con credenciales válidas",
+              "timedOut": null,
+              "duration": 1055,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#user-name').type(_constants.default.CYPRESS_USER_EMAIL);\ncy.get('#password').type(_constants.default.CYPRESS_USER_PASSWORD);\ncy.get('#login-button').click();\n// Verifica que llega al inventario\ncy.url().should('include', '/inventory.html');\ncy.get('.product_label').should('contain', 'Products');",
+              "err": {},
+              "uuid": "4f18f103-39f2-45d8-910f-4ee70c8da754",
+              "parentUUID": "dddcee99-025e-4f5a-b757-82d3bdc45897",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Debería mostrar un error con credenciales inválidas",
+              "fullTitle": "Login en SauceDemo usando .env Debería mostrar un error con credenciales inválidas",
+              "timedOut": null,
+              "duration": 817,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#user-name').type('usuario_incorrecto');\ncy.get('#password').type('clave_incorrecta');\ncy.get('#login-button').click();\n// Verifica el mensaje de error\ncy.get('[data-test=\"error\"]').should('be.visible').and('contain', 'Username and password do not match any user');",
+              "err": {},
+              "uuid": "2bcfea3e-0b89-4cd4-9a8e-842f1863bb38",
+              "parentUUID": "dddcee99-025e-4f5a-b757-82d3bdc45897",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4f18f103-39f2-45d8-910f-4ee70c8da754",
+            "2bcfea3e-0b89-4cd4-9a8e-842f1863bb38"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1872,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "cleanReporterJson": false,
+        "html": true,
+        "json": true,
+        "reportFilename": "report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
