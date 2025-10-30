@@ -12,13 +12,13 @@
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "start": "2025-10-30T17:58:01.239Z",
-    "end": "2025-10-30T18:00:04.883Z",
-    "duration": 123644
+    "start": "2025-10-30T19:47:07.612Z",
+    "end": "2025-10-30T19:49:10.764Z",
+    "duration": 123152
   },
   "results": [
     {
-      "uuid": "7616a091-8952-426b-8b45-737ad2eb8988",
+      "uuid": "545b5eb3-c0cd-499e-b685-cbacf21bd1e5",
       "title": "",
       "fullFile": "cypress/e2e/sanity/sanity.cy.js",
       "file": "cypress/e2e/sanity/sanity.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "9b403f9c-2034-4d48-bc67-f55efcfe87dc",
+          "uuid": "b0ac2e7d-4ab4-402b-b23f-81495376abae",
           "title": "Login en SauceDemo usando sanity",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Debería iniciar sesión correctamente con credenciales válidas",
               "fullTitle": "Login en SauceDemo usando sanity Debería iniciar sesión correctamente con credenciales válidas",
               "timedOut": null,
-              "duration": 121026,
+              "duration": 120848,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "AssertionError: Timed out retrying after 120000ms: Expected to find element: `[class=\"footer_copy\"]`, but never found it.\n    at Context.eval (webpack://cypress/./cypress/e2e/sanity/sanity.cy.js:12:8)",
                 "diff": null
               },
-              "uuid": "23dbb9fe-601b-447b-9ea0-a8745b7e6580",
-              "parentUUID": "9b403f9c-2034-4d48-bc67-f55efcfe87dc",
+              "uuid": "e2db02c8-c17e-4789-a0d3-8ee1d72e987f",
+              "parentUUID": "b0ac2e7d-4ab4-402b-b23f-81495376abae",
               "isHook": false,
               "skipped": false
             },
@@ -60,7 +60,7 @@
               "title": "Debería mostrar un error con credenciales inválidas",
               "fullTitle": "Login en SauceDemo usando sanity Debería mostrar un error con credenciales inválidas",
               "timedOut": null,
-              "duration": 809,
+              "duration": 819,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -69,22 +69,22 @@
               "context": null,
               "code": "cy.get('#user-name').type('usuario_incorrecto');\ncy.get('#password').type('clave_incorrecta');\ncy.get('#login-button').click();\n// Verifica el mensaje de error\ncy.get('[data-test=\"error\"]').should('be.visible').and('contain', 'Username and password do not match any user');",
               "err": {},
-              "uuid": "2df701cd-3047-4c33-b98e-9bbe2176dad5",
-              "parentUUID": "9b403f9c-2034-4d48-bc67-f55efcfe87dc",
+              "uuid": "dd79b08e-fb9a-4139-85ad-8ad318bbda1f",
+              "parentUUID": "b0ac2e7d-4ab4-402b-b23f-81495376abae",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "2df701cd-3047-4c33-b98e-9bbe2176dad5"
+            "dd79b08e-fb9a-4139-85ad-8ad318bbda1f"
           ],
           "failures": [
-            "23dbb9fe-601b-447b-9ea0-a8745b7e6580"
+            "e2db02c8-c17e-4789-a0d3-8ee1d72e987f"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 121835,
+          "duration": 121667,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
