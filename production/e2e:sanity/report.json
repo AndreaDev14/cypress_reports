@@ -1,0 +1,128 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-30T15:39:25.078Z",
+    "end": "2025-10-30T15:39:29.546Z",
+    "duration": 4468,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "38d01d5d-9aa5-4c2e-b548-d125f1730fe7",
+      "title": "",
+      "fullFile": "cypress/e2e/sanity/sanity.cy.js",
+      "file": "cypress/e2e/sanity/sanity.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "46c4837b-c7a1-46ad-8fb9-ddcd27a428bc",
+          "title": "Login en SauceDemo usando .env",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debería iniciar sesión correctamente con credenciales válidas",
+              "fullTitle": "Login en SauceDemo usando .env Debería iniciar sesión correctamente con credenciales válidas",
+              "timedOut": null,
+              "duration": 2048,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#user-name').type(_constants.default.CYPRESS_USER_EMAIL);\ncy.get('#password').type(_constants.default.CYPRESS_USER_PASSWORD);\ncy.get('#login-button').click();\ncy.get('[class=\"footer_copy\"]').invoke('text').then(text => {\n  const match = text.match(/\\d{4}/); // busca un año (4 dígitos seguidos)\n  const year = match ? match[0] : 'desconocido';\n  cy.writeFile('version.txt', year);\n  cy.log(`Guardando la versión ${year}`);\n});\n// Verifica que llega al inventario\ncy.url().should('include', '/inventory.html');\ncy.get('.product_label').should('contain', 'Products');",
+              "err": {},
+              "uuid": "6ba774c9-84a0-4941-a9f0-a002d2ac34d8",
+              "parentUUID": "46c4837b-c7a1-46ad-8fb9-ddcd27a428bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Debería mostrar un error con credenciales inválidas",
+              "fullTitle": "Login en SauceDemo usando .env Debería mostrar un error con credenciales inválidas",
+              "timedOut": null,
+              "duration": 770,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#user-name').type('usuario_incorrecto');\ncy.get('#password').type('clave_incorrecta');\ncy.get('#login-button').click();\n// Verifica el mensaje de error\ncy.get('[data-test=\"error\"]').should('be.visible').and('contain', 'Username and password do not match any user');",
+              "err": {},
+              "uuid": "df88b27f-0358-4bd6-91bd-8df708efb461",
+              "parentUUID": "46c4837b-c7a1-46ad-8fb9-ddcd27a428bc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6ba774c9-84a0-4941-a9f0-a002d2ac34d8",
+            "df88b27f-0358-4bd6-91bd-8df708efb461"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2818,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "cleanReporterJson": false,
+        "html": true,
+        "json": true,
+        "reportFilename": "report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
