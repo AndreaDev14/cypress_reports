@@ -1,24 +1,24 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 2,
-    "passes": 1,
+    "tests": 1,
+    "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2025-10-30T20:55:13.066Z",
-    "end": "2025-10-30T20:57:16.382Z",
-    "duration": 123316,
+    "start": "2025-11-03T19:56:28.570Z",
+    "end": "2025-11-03T19:56:28.978Z",
+    "duration": 408,
     "testsRegistered": 2,
-    "passPercent": 50,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
-    "skipped": 0,
-    "hasSkipped": false
+    "skipped": 1,
+    "hasSkipped": true
   },
   "results": [
     {
-      "uuid": "9bfb157f-2c3f-4ae2-80d8-a5de0797ba96",
+      "uuid": "ca9c3c77-1a58-400a-a7cf-7f45e6308694",
       "title": "",
       "fullFile": "cypress/e2e/sanity/sanity.cy.js",
       "file": "cypress/e2e/sanity/sanity.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "dbce585f-579f-457e-b40c-dd3ca8e6054e",
+          "uuid": "a4a9f0e6-6a83-471a-bb2a-42271ee95f51",
           "title": "Login en SauceDemo usando sanity",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Debería iniciar sesión correctamente con credenciales válidas",
               "fullTitle": "Login en SauceDemo usando sanity Debería iniciar sesión correctamente con credenciales válidas",
               "timedOut": null,
-              "duration": 120864,
+              "duration": 352,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -47,12 +47,12 @@
               "context": null,
               "code": "cy.get('#user-name').type(_constants.default.CYPRESS_USER_EMAIL);\ncy.get('#password').type('hola');\ncy.get('#login-button').click();\ncy.get('[class=\"footer_copy\"]').invoke('text').then(text => {\n  const match = text.match(/\\d{4}/); // busca un año (4 dígitos seguidos)\n  const year = match ? match[0] : 'desconocido';\n  cy.writeFile('version.txt', year);\n  cy.log(`Guardando la versión ${year}`);\n});\n// Verifica que llega al inventario\ncy.url().should('include', '/inventory.html');\ncy.get('.product_label').should('contain', 'Products');",
               "err": {
-                "message": "AssertionError: Timed out retrying after 120000ms: Expected to find element: `[class=\"footer_copy\"]`, but never found it.",
-                "estack": "AssertionError: Timed out retrying after 120000ms: Expected to find element: `[class=\"footer_copy\"]`, but never found it.\n    at Context.eval (webpack://cypress/./cypress/e2e/sanity/sanity.cy.js:12:8)",
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://www.saucedemo.com/v1\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Login en SauceDemo usando s...`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://www.saucedemo.com/v1\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Login en SauceDemo usando s...`\n    at <unknown> (http://localhost:36769/__cypress/runner/cypress_runner.js:134395:76)\n    at visitFailedByErr (http://localhost:36769/__cypress/runner/cypress_runner.js:133985:12)\n    at <unknown> (http://localhost:36769/__cypress/runner/cypress_runner.js:134378:13)\n    at tryCatcher (http://localhost:36769/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:36769/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:36769/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:36769/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:36769/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:36769/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:36769/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:36769/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:36769/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/sanity/sanity.cy.js:4:7)",
                 "diff": null
               },
-              "uuid": "d6e2ba4c-a4f0-4ba9-ad19-dcb755929f07",
-              "parentUUID": "dbce585f-579f-457e-b40c-dd3ca8e6054e",
+              "uuid": "46c464c0-c127-41b5-9b89-8b3f82eaaa15",
+              "parentUUID": "a4a9f0e6-6a83-471a-bb2a-42271ee95f51",
               "isHook": false,
               "skipped": false
             },
@@ -60,31 +60,31 @@
               "title": "Debería mostrar un error con credenciales inválidas",
               "fullTitle": "Login en SauceDemo usando sanity Debería mostrar un error con credenciales inválidas",
               "timedOut": null,
-              "duration": 863,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.get('#user-name').type('usuario_incorrecto');\ncy.get('#password').type('clave_incorrecta');\ncy.get('#login-button').click();\n// Verifica el mensaje de error\ncy.get('[data-test=\"error\"]').should('be.visible').and('contain', 'Username and password do not match any user');",
               "err": {},
-              "uuid": "c35e3c60-3861-4b73-8684-03ce273a2f79",
-              "parentUUID": "dbce585f-579f-457e-b40c-dd3ca8e6054e",
+              "uuid": "df192924-f23b-451f-ae8e-bc349d500a57",
+              "parentUUID": "a4a9f0e6-6a83-471a-bb2a-42271ee95f51",
               "isHook": false,
-              "skipped": false
+              "skipped": true
             }
           ],
           "suites": [],
-          "passes": [
-            "c35e3c60-3861-4b73-8684-03ce273a2f79"
-          ],
+          "passes": [],
           "failures": [
-            "d6e2ba4c-a4f0-4ba9-ad19-dcb755929f07"
+            "46c464c0-c127-41b5-9b89-8b3f82eaaa15"
           ],
           "pending": [],
-          "skipped": [],
-          "duration": 121727,
+          "skipped": [
+            "df192924-f23b-451f-ae8e-bc349d500a57"
+          ],
+          "duration": 352,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
